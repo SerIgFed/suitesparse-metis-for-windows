@@ -11,6 +11,11 @@
 // include files
 // -----------------------------------------------------------------------------
 
+// msvc+cuda92 fix: https://github.com/jlblancoc/suitesparse-metis-for-windows/issues/63
+#ifdef GPU_BLAS
+#include <cublas_v2.h>
+#endif
+
 extern "C"
 {
 #include "SuiteSparseQR_definitions.h"
